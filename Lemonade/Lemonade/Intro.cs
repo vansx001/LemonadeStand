@@ -11,19 +11,31 @@ namespace Lemonade
         string answer;
 
         public void RunIntro()
-        {
-            Console.WriteLine("Welcome to LEMONADE STAND. Do you want to play?\nEnter 'y' for Yes\nEnter 'n' for No");
+            {
+            Console.WriteLine("You are in need of money! Your parents are kicking you out in 2 weeks and you’ve never had a job before. \nYou will do anything – even open up a Lemonade Stand. Are you up for the challenge?\n\nEnter 'y' for Yes\nEnter 'n' for No");
             answer = Console.ReadLine();
 
             if (answer == "y")
-            {
+                {
                 Console.Clear();
-                Console.WriteLine("GREAT!! Before we start the game, here are some goals to keep in mind:\n- In SEVEN days, make as much money as possible.\n- Increase your starting funds of $25. \n- Correctly price your product, control inventory, and purchase supplies.\n\nBuy your ingredients and start selling!");
+                Console.WriteLine("Challenge accepted!!");
+                Console.WriteLine(".\n.\n.\n.\n.\n.\npress any key to continue");
+                Console.ReadLine();
+                    
+                }
+                else if (answer == "n")
+                {
+                    Console.Clear();
+                    Console.WriteLine("See ya!");
+                    Console.ReadLine();
+                    Environment.Exit(1);
             }
-            else
-            {
-                Console.Clear();
-                Console.WriteLine("Okay, maybe next time! See ya!");
+                else
+                {
+                    Console.WriteLine("\nInvalid option.");
+                    Console.ReadLine();
+                    Console.Clear();
+                    RunIntro();
             }
         }
     }

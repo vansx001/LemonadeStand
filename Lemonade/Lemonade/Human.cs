@@ -19,8 +19,26 @@ namespace Lemonade
 
         public Human()
         {
-            if (choice == "1")
-                this.humanPlayerOne = new Human(Console.ReadLine());
+
+        }
+
+        public void SetUpHuman()
+        {
+            //Console.Clear();
+            //if (choice == "1")
+            //{
+            //    Console.WriteLine("You chose One Player mode. What is your name?");
+            //    name = Console.ReadLine();
+            //    Console.Clear();
+            //    Console.WriteLine("{0}, let's check your inventory and wallet.",name);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("You chose to play against computer. What is your name?");
+            //    name = Console.ReadLine();
+            //    Console.Clear();
+            //    Console.WriteLine("{0}, let's check your inventory and wallet.",name);
+            //}
         }
         
     }

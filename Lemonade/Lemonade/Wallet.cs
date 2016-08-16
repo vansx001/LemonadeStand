@@ -8,19 +8,15 @@ namespace Lemonade
 {
     class Wallet
     {
-        private int wallet;
+        private double startingFunds;
 
-        public Wallet(int wallet)
+        public Wallet()
         {
-            this.wallet = 25;
+            this.startingFunds = 25;
         }
-        public int GetWallet()
+        public double GetWallet()
         {
-            return this.wallet;
-        }
-        public void AddOrSubtractToBalance()
-        {
-
+            return this.startingFunds;
         }
     }
 }

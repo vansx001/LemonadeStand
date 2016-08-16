@@ -9,7 +9,6 @@ namespace Lemonade
     public class Player
     {
         public Player humanPlayerOne;
-        public Player humanPlayerTwo;
         public Player computer;
         public string name;
         public string choice;
@@ -27,8 +26,31 @@ namespace Lemonade
 
         public virtual void PickPlayers()
         {
-            Console.WriteLine("Make your selection:\n1 - One Player Game\n2 - Two Player Game\n3 - Play Against Computer");
-            choice = Console.ReadLine();         
+            Console.Clear();
+            Console.WriteLine("Please make your selection:\n1 - One Player\n2 - Play Against Computer");
+            choice = Console.ReadLine();
+
+            Console.Clear();
+            if (choice == "1")
+            {
+                Console.WriteLine("You chose One Player mode. What is your name?");
+                name = Console.ReadLine();
+                Console.Clear();
+                Console.WriteLine("{0}, let's check your inventory and wallet.", name);
+            }
+            else if (choice == "2")
+            {
+                Console.WriteLine("You chose to play against computer. What is your name?");
+                name = Console.ReadLine();
+                Console.Clear();
+                Console.WriteLine("{0}, let's check your inventory and wallet.", name);
+            }
+            else
+            {
+                Console.WriteLine("Invalid option.");
+                Console.ReadLine();
+                PickPlayers();
+            }
         }
     }
 }

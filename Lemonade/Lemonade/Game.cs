@@ -8,12 +8,20 @@ namespace Lemonade
 {
     class Game
     {
+
         public void RunGame()
         {
             Intro intro = new Intro();
             intro.RunIntro();
-            Human humanPlayer = new Human();
-            humanPlayer.PickPlayers();
+
+            Player player = new Player();
+            player.PickPlayers();
+
+            Human human = new Human();
+            human.SetUpHuman();
+
+            Shop shop = new Shop();
+            shop.GetWalletAndInventory();
 
             Console.WriteLine();
             Console.ReadLine();
