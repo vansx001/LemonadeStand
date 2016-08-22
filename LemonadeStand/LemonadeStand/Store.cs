@@ -13,10 +13,10 @@ namespace LemonadeStand
         public List<Ice> iceList = new List<Ice>();
         public List<Sugar> sugarList = new List<Sugar>();
         public List<Cups> cupsList = new List<Cups>();
-        Lemon lemon = new Lemon(0, 0);
-        Ice ice = new Ice(0, 0);
+        Lemon lemon = new Lemon(0);
+        Ice ice = new Ice(0);
         Sugar sugar = new Sugar(0);
-        Cups cups = new Cups(0, 0);
+        Cups cups = new Cups(0);
         string lemonCount;
         string iceCount;
         string sugarCount;
@@ -25,19 +25,17 @@ namespace LemonadeStand
 
         public Store()
         {
-            
-
         }
 
         public void DisplayCostOfSuppliesInStore(Inventory inventory)
         {
-            Console.WriteLine("\n***STORE (cost per item)***");
-            Console.WriteLine("Lemon: ${0}, \t\tSugar: ${1} \nIce ${2} \t\tCups ${3}",
+            Console.WriteLine("\n\nSTORE (COST PER ITEM)");
+            Console.WriteLine("------------------------------------");
+            Console.WriteLine("Lemon: ${0} \tSugar: ${1} \tIce ${2} \tCups ${3}",
                 lemon.cost,
                 sugar.cost,
                 ice.cost,
                 cups.cost);
-            Console.WriteLine("\t------------------------------------\n");
         }
 
         public void BuySupplies(Player player, Inventory inventory)
@@ -50,18 +48,15 @@ namespace LemonadeStand
                 BuyCups(player, inventory);
                 GetPitcher();
             }
-            if (player.wallet.money <= 0) { 
+            else if (player.wallet.money <= 0)
+            { 
                 Console.WriteLine("You do not have enough money. Game Over LOSER!");
                 Console.ReadLine();
             }
         }
         public List<Pitcher> GetPitcher()
         {
-            Console.WriteLine("Do you want to make a pitcher?");
-            string answer = Console.ReadLine();
-            if (answer == "Y" || answer == "y")
-            {
-                Console.WriteLine("How many?");
+                Console.WriteLine("How many pitchers do you want to make?");
                 int numberOfpitcher = int.Parse(Console.ReadLine());
                 for (int i = 0; i < numberOfpitcher; i++)
                 {
@@ -72,15 +67,14 @@ namespace LemonadeStand
                     }
                     else if (lemonList.Count < 4 && sugarList.Count < 6 && iceList.Count < 10 && cupsList.Count < 8)
                     {
-                        Console.WriteLine("You do not have enough ingredients to make any more pitchers.");
+                        Console.WriteLine("You do not have enough ingredients to make more pitchers.");
                         Console.ReadLine();
                         break;
-                    }
                 }
             }
             return pitcherList;
         }
-            
+
         public List<Lemon> BuyLemon(Player player, Inventory inventory)
         {
             if (player.wallet.money > 0)

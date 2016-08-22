@@ -13,13 +13,13 @@ namespace LemonadeStand
         public void RunIntro()
         {
             Console.WriteLine("Welcome to LEMONADE STAND!");
-            Console.WriteLine("\n\nYou are in need of money! Your parents are kicking you out in 2 weeks and you’ve never had a job before. \nYou will do anything – even open up a Lemonade Stand. Are you up for the challenge?\n\nEnter 'y' for Yes\nEnter 'n' for No");
+            Console.WriteLine("\nYou are in need of money! Your parents are kicking you out in 2 weeks and you’ve never had a job before. \nYou will do anything – even open up a Lemonade Stand. Are you up for the challenge?\n \tEnter 'y' for Yes\n \tEnter 'n' for No");
             answer = Console.ReadLine();
 
             if (answer == "y")
             {
                 Console.Clear();
-                Console.WriteLine("Challenge accepted!!\n press <enter> to continue.");
+                Console.WriteLine("Challenge accepted!!\n \tpress <enter> to continue...");
                 Console.ReadLine();
 
             }

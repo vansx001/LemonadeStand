@@ -9,17 +9,15 @@ namespace LemonadeStand
    public class Recipe
     {
 
-
         public Recipe()
         {
-
         }
-
 
         public void ShowRecipe()
         {
-            Console.WriteLine("\n*** RECIPE (required ingredients per pitcher) ***");
-            Console.WriteLine("Lemon: <4> \t\tSugar: <6> \nIce: <10> \t\tCups: <8>");
+            Console.WriteLine("\nRECIPE (REQUIRED INGREDIENTS PER PITCHER)");
+            Console.WriteLine("------------------------------------");
+            Console.WriteLine("Lemons: 4 \tSugar: 6 \tIce: 10 \tCups: 8");
         }
     }
 }

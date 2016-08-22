@@ -11,13 +11,13 @@ namespace LemonadeStand
         Random random = new Random();
         List<Customer> customerList = new List<Customer>();
         int amountOfCustomers;
-        int thirst;
-        int deter;
+        int want;
+        int determineCustomers;
 
         public Customer()
         {
-            this.deter = 0;
-            this.thirst = 0;
+            this.determineCustomers = 0;
+            this.want = 0;
             this.amountOfCustomers = 0;
         }
 
@@ -27,22 +27,21 @@ namespace LemonadeStand
             DetermineCustomers(weather);
             CreateCustomers(weather);
             return customerList;
-                
         }
 
         public int SetThirstForLemonade(Weather weather)
         {
-            int want = random.Next(1,90);
+            int wantRandom = random.Next(1,90);
             switch (weather.GetWeatherCondition())
             {
                 case "sunny":
-                    return want += 30;
+                    return wantRandom += 30;
                 case "cloudy":
-                    return want -= 30;
+                    return wantRandom -= 30;
                 case "rainy":
-                    return want -= 55;
+                    return wantRandom -= 55;
                 default:
-                    return want;
+                    return wantRandom;
             }
         }
 
@@ -65,9 +64,9 @@ namespace LemonadeStand
             for (int i = 0; i < amountOfCustomers; i++)
             {
                 Customer customer = new Customer();
-                customer.deter = DetermineCustomers(weather);
-                customer.thirst = SetThirstForLemonade(weather);
-                if (customer.thirst >= 25)
+                customer.determineCustomers = DetermineCustomers(weather);
+                customer.want = SetThirstForLemonade(weather);
+                if (customer.want >= 25)
                 {
                     customerList.Add(customer);
                 }

@@ -6,16 +6,13 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    public class Lemon
+    public class Sugar
     {
-        public int quantity;
         public double cost;
 
-        public Lemon(int quantity, double cost)
+        public Sugar(double cost)
         {
-            this.quantity = 0;
-            this.cost = .25;
+            this.cost = .22;
         }
-
     }
 }

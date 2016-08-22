@@ -13,37 +13,35 @@ namespace LemonadeStand
         Random random = new Random();
         Customer customer = new Customer();
 
-        public decimal cupPrice;
-        public int dayNumber = 0;
-        public decimal dailyDollarsEarned;
-        public int numberGlassesBought = 0;
+        public int dayOfWeek;
         string answer;
 
         public Day()
         {
-           dayNumber++;
+            dayOfWeek = 1;
         }
 
-        public void RunStartOfDay(Stand stand, Player player, Store store, Inventory inventory)
+public void RunDay(Stand stand, Player player, Store store, Inventory inventory)
         {
-            string answer = "";
+            Console.WriteLine("DAY {0} OF 7.\n press <enter> to continue...", dayOfWeek);
+            Console.ReadLine();
             weather.GetWeatherForecast();
             player.wallet.GetMoney();
             player.recipe.ShowRecipe();
             store.DisplayCostOfSuppliesInStore(inventory);
+            stand.SetCupPrice();
 
-                    
-            while (answer != "y" || answer !="n")
+            while (answer != "y" || answer != "n")
             {
                 if (player.wallet.money > 0)
                 {
                     Console.WriteLine("Do you want to buy supplies? \nEnter 'y' for Yes\nEnter 'n' for No.\n");
                     answer = Console.ReadLine();
-                    if (answer == "y")
+                    if (answer == "y" || answer == "Y")
                     {
                         store.BuySupplies(player, inventory);
                     }
-                    else if (answer == "n")
+                    else if (answer == "n" || answer == "N")
                     {
                         Console.Clear();
                         break;
@@ -55,17 +53,10 @@ namespace LemonadeStand
                     }
                 }
                 else break;
-        }
-            customer.GetCustomersToBuy(weather);
-
-        }
-
-        public void MakeCustomers()
-        {
+            }
             
+            Console.WriteLine("SUMMARY:\n Your new life savings balance: ${0}",stand.GetNewBalance(customer, weather, player));
+            Console.WriteLine();
         }
-        
-        
     }
-
 }

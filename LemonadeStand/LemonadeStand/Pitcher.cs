@@ -8,6 +8,5 @@ namespace LemonadeStand
 {
     public class Pitcher
     {
-        //List<Pitcher> pitcherList = new List<Pitcher>();
     }
 }
