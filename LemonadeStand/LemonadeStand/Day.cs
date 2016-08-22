@@ -34,7 +34,7 @@ public void RunDay(Stand stand, Player player, Store store, Inventory inventory,
             stand.SetCupPrice(0);
             customer.GetCustomersToBuy(weather);
 
-            Console.WriteLine("SUMMARY:\n Your new life savings balance: ${0}",player.wallet.GetNewBalance(customer, weather));
+            Console.WriteLine("SUMMARY:\n Your new life savings balance: ${0}",player.wallet.GetNewBalance(customer, weather, stand));
             Console.WriteLine();
         }
     }

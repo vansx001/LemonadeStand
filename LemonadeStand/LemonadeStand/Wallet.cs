@@ -21,11 +21,11 @@ namespace LemonadeStand
         {
             Console.WriteLine("Total money in wallet: ${0}",this.money);
         }
-        public double GetNewBalance(Customer customer, Weather weather)
+        public double GetNewBalance(Customer customer, Weather weather, Stand stand)
             
         {
-            newBalance *= customer.GetCustomersToBuy(weather).Count;
-            this.money += newBalance;
+            newBalance = customer.GetCustomersToBuy(weather).Count * stand.GetCupPrice();
+            this.money = newBalance;
             return this.money;
         }
     }

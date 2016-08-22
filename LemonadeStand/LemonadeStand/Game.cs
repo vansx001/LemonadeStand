@@ -32,11 +32,11 @@ namespace LemonadeStand
                 day.RunDay(stand, player, store, supply, recipe);
                 day.dayOfWeek++;
             }
-            DeterminePlayerStatus(player);
+            EndOfGame(player);
 
         }
 
-        public void DeterminePlayerStatus(Player player)
+        public void EndOfGame(Player player)
         {
             Console.Clear();
             Console.WriteLine("Congrats {0}!!! You finished 7 Days of Lemonade Stand!", player.name);
