@@ -13,7 +13,7 @@ namespace LemonadeStand
 
         public Ice(double cost)
         {
-            this.cost = .12;
+            this.cost = .08;
         }
     }
 }

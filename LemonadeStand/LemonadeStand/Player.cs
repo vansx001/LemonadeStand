@@ -8,7 +8,6 @@ namespace LemonadeStand
 {
     public class Player
     {
-        public Recipe recipe = new Recipe();
         public Wallet wallet = new Wallet();
         
         public string name;
@@ -33,7 +32,6 @@ namespace LemonadeStand
             Console.WriteLine("- In 7 days try to make as much money as possible.");
             Console.WriteLine("- Keep in mind that weather conditions affect your possible sales for the day.");
             Console.WriteLine("- Since you're the boss you get to determine the price per cup.");
-            Console.WriteLine("- At the end of the game, you'll see how much money you've made.");
             Console.WriteLine("\n\t press <enter> to continue...");
             Console.ReadLine();
             Console.Clear();

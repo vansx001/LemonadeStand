@@ -6,28 +6,27 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Stand
+    public class Stand
     {
-        double answer;
-        double newBalance;
+        double chargePerCup;
+
 
         public Stand()
         {
-            answer = 0;
-            newBalance = 0;
+            chargePerCup = 0;
+
         }
 
-        public double SetCupPrice()
+        public double GetCupPrice()
         {
-            Console.WriteLine("\nHow much do you want to charge per cup?");
-            answer = Convert.ToDouble(Console.ReadLine());
-            return answer;
+            Console.WriteLine("How much do you want to charge per cup?");
+            chargePerCup = Convert.ToDouble(Console.ReadLine());
+            return chargePerCup;
         }
-        public double GetNewBalance(Customer customer, Weather weather, Player player)//get new daily balance
+
+        public void SetCupPrice(double chargePerCup)
         {
-            newBalance *= customer.GetCustomersToBuy(weather).Count; 
-            player.wallet.money += newBalance;
-            return player.wallet.money;
-            }
+            this.chargePerCup = chargePerCup;
+        }
     }
 }

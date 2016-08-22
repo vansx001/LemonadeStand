@@ -13,14 +13,15 @@ namespace LemonadeStand
         public List<Ice> iceList = new List<Ice>();
         public List<Sugar> sugarList = new List<Sugar>();
         public List<Cups> cupsList = new List<Cups>();
-        Lemon lemon = new Lemon(0);
-        Ice ice = new Ice(0);
-        Sugar sugar = new Sugar(0);
-        Cups cups = new Cups(0);
+        public Lemon lemon = new Lemon(0);
+        public Ice ice = new Ice(0);
+        public Sugar sugar = new Sugar(0);
+        public Cups cups = new Cups(0);
         string lemonCount;
         string iceCount;
         string sugarCount;
         string cupsCount;
+        public int numberOfPitcher;
 
 
         public Store()
@@ -38,7 +39,7 @@ namespace LemonadeStand
                 cups.cost);
         }
 
-        public void BuySupplies(Player player, Inventory inventory)
+        public void BuySupplies(Player player, Inventory inventory, Store store)
         {
             if (player.wallet.money > 0)
             {
@@ -46,30 +47,31 @@ namespace LemonadeStand
                 BuySugar(player, inventory);
                 BuyIce(player, inventory);
                 BuyCups(player, inventory);
-                GetPitcher();
             }
             else if (player.wallet.money <= 0)
             { 
                 Console.WriteLine("You do not have enough money. Game Over LOSER!");
                 Console.ReadLine();
+                Environment.Exit(1);
             }
+
         }
         public List<Pitcher> GetPitcher()
         {
-                Console.WriteLine("How many pitchers do you want to make?");
-                int numberOfpitcher = int.Parse(Console.ReadLine());
-                for (int i = 0; i < numberOfpitcher; i++)
+            Console.WriteLine("How many pitchers do you want to make?");
+            numberOfPitcher = int.Parse(Console.ReadLine());
+            for (int i = 0; i < numberOfPitcher; i++)
+            {
+                Pitcher pitcher = new Pitcher();
+                if (lemonList.Count >= 4 && sugarList.Count >= 6 && iceList.Count >= 10 && cupsList.Count >= 8)
                 {
-                    Pitcher pitcher = new Pitcher();
-                    if (lemonList.Count >= 4 && sugarList.Count >= 6 && iceList.Count >= 10 && cupsList.Count >= 8)
-                    {
-                        pitcherList.Add(pitcher);
-                    }
-                    else if (lemonList.Count < 4 && sugarList.Count < 6 && iceList.Count < 10 && cupsList.Count < 8)
-                    {
-                        Console.WriteLine("You do not have enough ingredients to make more pitchers.");
-                        Console.ReadLine();
-                        break;
+                    pitcherList.Add(pitcher);
+                }
+                else if (lemonList.Count < 4 && sugarList.Count < 6 && iceList.Count < 10 && cupsList.Count < 8)
+                {
+                    Console.WriteLine("You do not have enough ingredients to make more pitchers.");
+                    Console.ReadLine();
+                    break;
                 }
             }
             return pitcherList;

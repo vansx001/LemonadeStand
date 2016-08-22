@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-        class Weather
+        public class Weather
     {
         Random random = new Random();
         List<string> weatherConditionName = new List<string>();

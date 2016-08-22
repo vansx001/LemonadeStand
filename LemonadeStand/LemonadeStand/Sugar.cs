@@ -12,7 +12,7 @@ namespace LemonadeStand
 
         public Sugar(double cost)
         {
-            this.cost = .22;
+            this.cost = .05;
         }
     }
 }

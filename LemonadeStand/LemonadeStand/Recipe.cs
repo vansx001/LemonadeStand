@@ -11,6 +11,7 @@ namespace LemonadeStand
 
         public Recipe()
         {
+
         }
 
         public void ShowRecipe()
@@ -19,5 +20,6 @@ namespace LemonadeStand
             Console.WriteLine("------------------------------------");
             Console.WriteLine("Lemons: 4 \tSugar: 6 \tIce: 10 \tCups: 8");
         }
+
     }
 }

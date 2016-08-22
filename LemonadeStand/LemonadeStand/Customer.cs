@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Customer
+    public class Customer
     {
         Random random = new Random();
         List<Customer> customerList = new List<Customer>();
@@ -18,28 +18,28 @@ namespace LemonadeStand
         {
             this.determineCustomers = 0;
             this.want = 0;
-            this.amountOfCustomers = 0;
+            
         }
 
         public List<Customer> GetCustomersToBuy(Weather weather)
         {
-            SetThirstForLemonade(weather);
+            SetWantForLemonade(weather);
             DetermineCustomers(weather);
             CreateCustomers(weather);
             return customerList;
         }
 
-        public int SetThirstForLemonade(Weather weather)
+        public int SetWantForLemonade(Weather weather)
         {
             int wantRandom = random.Next(1,90);
             switch (weather.GetWeatherCondition())
             {
-                case "sunny":
-                    return wantRandom += 30;
-                case "cloudy":
-                    return wantRandom -= 30;
                 case "rainy":
                     return wantRandom -= 55;
+                case "cloudy":
+                    return wantRandom -= 30;
+                case "sunny":
+                    return wantRandom += 35;
                 default:
                     return wantRandom;
             }
@@ -49,12 +49,12 @@ namespace LemonadeStand
         {
             switch (weather.GetWeatherCondition())
             {
-                case "sunny":
-                    return amountOfCustomers = random.Next(75,100);
-                case "cloudy":
-                    return amountOfCustomers = random.Next(25,50);
                 case "rainy":
                     return amountOfCustomers = random.Next(1,30);
+                case "cloudy":
+                    return amountOfCustomers = random.Next(25,50);
+                case "sunny":
+                    return amountOfCustomers = random.Next(50,100);
                 default:
                     return amountOfCustomers;
             }
@@ -65,7 +65,7 @@ namespace LemonadeStand
             {
                 Customer customer = new Customer();
                 customer.determineCustomers = DetermineCustomers(weather);
-                customer.want = SetThirstForLemonade(weather);
+                customer.want = SetWantForLemonade(weather);
                 if (customer.want >= 25)
                 {
                     customerList.Add(customer);

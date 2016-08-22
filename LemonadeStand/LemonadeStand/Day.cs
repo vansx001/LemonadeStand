@@ -14,48 +14,27 @@ namespace LemonadeStand
         Customer customer = new Customer();
 
         public int dayOfWeek;
-        string answer;
+
 
         public Day()
         {
             dayOfWeek = 1;
         }
 
-public void RunDay(Stand stand, Player player, Store store, Inventory inventory)
+public void RunDay(Stand stand, Player player, Store store, Inventory inventory, Recipe recipe)
         {
             Console.WriteLine("DAY {0} OF 7.\n press <enter> to continue...", dayOfWeek);
             Console.ReadLine();
             weather.GetWeatherForecast();
             player.wallet.GetMoney();
-            player.recipe.ShowRecipe();
+            recipe.ShowRecipe();
             store.DisplayCostOfSuppliesInStore(inventory);
-            stand.SetCupPrice();
+            store.BuySupplies(player, inventory, store);
+            store.GetPitcher();
+            stand.SetCupPrice(0);
+            customer.GetCustomersToBuy(weather);
 
-            while (answer != "y" || answer != "n")
-            {
-                if (player.wallet.money > 0)
-                {
-                    Console.WriteLine("Do you want to buy supplies? \nEnter 'y' for Yes\nEnter 'n' for No.\n");
-                    answer = Console.ReadLine();
-                    if (answer == "y" || answer == "Y")
-                    {
-                        store.BuySupplies(player, inventory);
-                    }
-                    else if (answer == "n" || answer == "N")
-                    {
-                        Console.Clear();
-                        break;
-                    }
-                    else
-                    {
-                        Console.WriteLine("\nInvalid option.");
-                        Console.ReadLine();
-                    }
-                }
-                else break;
-            }
-            
-            Console.WriteLine("SUMMARY:\n Your new life savings balance: ${0}",stand.GetNewBalance(customer, weather, player));
+            Console.WriteLine("SUMMARY:\n Your new life savings balance: ${0}",player.wallet.GetNewBalance(customer, weather));
             Console.WriteLine();
         }
     }

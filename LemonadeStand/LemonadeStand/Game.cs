@@ -14,6 +14,8 @@ namespace LemonadeStand
         Day day = new Day();
         Store store = new Store();
         Stand stand = new Stand();
+        Pitcher pitcher = new Pitcher();
+        Recipe recipe = new Recipe();
 
         public Game()
         {
@@ -27,14 +29,19 @@ namespace LemonadeStand
             player.RunRules();
             while (day.dayOfWeek <= 7)
             {
-                day.RunDay(stand, player, store, supply);
+                day.RunDay(stand, player, store, supply, recipe);
                 day.dayOfWeek++;
             }
+            DeterminePlayerStatus(player);
+
         }
 
-        //determine if player wins or loses
-        public void DeterminePlayerStatus()
-        { 
+        public void DeterminePlayerStatus(Player player)
+        {
+            Console.Clear();
+            Console.WriteLine("Congrats {0}!!! You finished 7 Days of Lemonade Stand!", player.name);
+            Console.ReadLine();
+
         }
         
 

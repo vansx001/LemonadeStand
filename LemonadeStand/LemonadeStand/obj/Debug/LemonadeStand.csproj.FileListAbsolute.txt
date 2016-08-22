@@ -14,3 +14,9 @@ C:\Users\Sheng\Documents\Sheng\GitHub\vansx001.LemonadeStand\LemonadeStand2\Lemo
 C:\Users\Sheng\Documents\Sheng\GitHub\vansx001.LemonadeStand\LemonadeStand2\LemonadeStand\obj\Debug\LemonadeStand.pdb
 C:\Users\Sheng\Documents\Sheng\GitHub\vansx001.LemonadeStand\LemonadeStand2\LemonadeStand\bin\Debug\LemonadeStand.exe
 C:\Users\Sheng\Documents\Sheng\GitHub\vansx001.LemonadeStand\LemonadeStand2\LemonadeStand\bin\Debug\LemonadeStand.pdb
+C:\Users\Sheng\Documents\Sheng\GitHub\vansx001.LemonadeStand\LemonadeStand\LemonadeStand\bin\Debug\LemonadeStand.exe.config
+C:\Users\Sheng\Documents\Sheng\GitHub\vansx001.LemonadeStand\LemonadeStand\LemonadeStand\obj\Debug\LemonadeStand.exe
+C:\Users\Sheng\Documents\Sheng\GitHub\vansx001.LemonadeStand\LemonadeStand\LemonadeStand\obj\Debug\LemonadeStand.pdb
+C:\Users\Sheng\Documents\Sheng\GitHub\vansx001.LemonadeStand\LemonadeStand\LemonadeStand\bin\Debug\LemonadeStand.exe
+C:\Users\Sheng\Documents\Sheng\GitHub\vansx001.LemonadeStand\LemonadeStand\LemonadeStand\bin\Debug\LemonadeStand.pdb
+C:\Users\Sheng\Documents\Sheng\GitHub\vansx001.LemonadeStand\LemonadeStand\LemonadeStand\obj\Debug\LemonadeStand.csprojResolveAssemblyReference.cache
